@@ -4,14 +4,13 @@ import Header from "../../components/header";
 import HomePage from "./components/home";
 import Cinemas from "./components/cinema";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <Box>
       <Header />
       <HomePage />
       <Cinemas />
+      <MovieTrailer />
     </Box>
   );
 };
