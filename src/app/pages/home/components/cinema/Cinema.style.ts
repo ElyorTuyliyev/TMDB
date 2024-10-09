@@ -29,7 +29,7 @@ export const CinemaStyle = styled.div`
     width: 25px;
     height: 25px;
     display: flex;
-    background-color: #0000001a;
+    background-color: #e3dcdc94;
     align-items: center;
     justify-content: center;
     border-radius: 50%;

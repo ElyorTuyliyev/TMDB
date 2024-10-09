@@ -1,7 +1,6 @@
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import HomeImg from "../../../assets/HomeImg.jpg";
 import HomeImg2 from "../../../assets/tds.jpg";
 
 import SearchIcon from "@mui/icons-material/Search";

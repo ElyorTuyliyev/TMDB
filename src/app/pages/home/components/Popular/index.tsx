@@ -1,19 +1,32 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { CinemaStyle } from "./Cinema.style";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { CinemaStyle } from "../cinema/Cinema.style";
+import { log } from "console";
+
 type Props = {
   title: string;
   poster_path: string;
   vote_count: string;
   release_date: string;
 };
-
-const Cinemas = () => {
+const Popular = () => {
   const [movieList, setMovieList] = useState([]);
   const getMovie = () => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMTAxYzU0Yjc2MjkzZDU1ODQ5ZmU0ZWY4NTM3NmNjNSIsIm5iZiI6MTcyODM3OTY0My43MDk3NDksInN1YiI6IjY2NjA1MThiYTA2NDNiMjUwNzdkOGFkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YcuCuaMKxP0Ogq_ZT5fA7lu5uymJB3cqtoDl5V-X3-I",
+      },
+    };
+
     fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?api_key=2101c54b76293d55849fe4ef85376cc5&page=2"
+      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${Math.floor(
+        Math.random() * 9
+      )}`,
+      options
     )
       .then((response) => response.json())
       .then((response) => setMovieList(response.results))
@@ -29,14 +42,11 @@ const Cinemas = () => {
       <Container maxWidth="lg">
         <Box className="cinema__title-wrapper">
           <Typography className="cinema__title" variant="h4">
-            Trending
+            What's Popular
           </Typography>
           <Box className="cinema__btn-wrapper">
-            <Button className="cinema__btn" variant="outlined">
-              Today
-            </Button>
-            <Button className="cinema__btn" variant="outlined">
-              This week
+            <Button className="cinema__btn" variant="contained">
+              In Theaters
             </Button>
           </Box>
         </Box>
@@ -77,4 +87,4 @@ const Cinemas = () => {
   );
 };
 
-export default Cinemas;
+export default Popular;

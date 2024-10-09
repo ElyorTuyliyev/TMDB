@@ -1,19 +1,40 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import React from "react";
+import TrailerStyle from "./trailers.style";
 
 type Props = {};
 
 const MovieTrailer = (props: Props) => {
   return (
-    <Box className="movie__trailer-wrapper">
-      <Box className="movie__trailer-title-wrapper">
-        <Typography>Latest Trailer </Typography>
-        <Box>
-          <Button variant="outlined">Popular</Button>
-          <Button variant="outlined">In Theaters</Button>
+    <Container maxWidth="lg">
+      <TrailerStyle>
+        <Box className="movie__trailer-wrapper">
+          <Box className="movie__trailer-title-wrapper">
+            <Typography>Latest Trailer </Typography>
+            <Box>
+              <Button variant="outlined">Popular</Button>
+              <Button variant="outlined">In Theaters</Button>
+            </Box>
+          </Box>
         </Box>
-      </Box>
-    </Box>
+        <Box className="movie__trailer-link-box">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/moMbpOfFOIY?si=Gjctkd1SLPDq6zq-"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/moMbpOfFOIY?si=Gjctkd1SLPDq6zq-"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </Box>
+      </TrailerStyle>
+    </Container>
   );
 };
 

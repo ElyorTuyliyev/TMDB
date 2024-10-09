@@ -6,7 +6,7 @@ declare module ".jpg" {
   const value: string;
   export default value;
 }
-declare module ".swg" {
+declare module ".svg" {
   const value: string;
   export default value;
 }
