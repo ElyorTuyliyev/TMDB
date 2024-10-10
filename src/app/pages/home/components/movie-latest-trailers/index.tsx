@@ -1,4 +1,11 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import TrailerStyle from "./trailers.style";
 
@@ -12,8 +19,14 @@ const MovieTrailer = (props: Props) => {
           <Box className="movie__trailer-title-wrapper">
             <Typography>Latest Trailer </Typography>
             <Box>
-              <Button variant="outlined">Popular</Button>
-              <Button variant="outlined">In Theaters</Button>
+              <ToggleButtonGroup
+                className="cinema__btn"
+                exclusive
+                aria-label="text-alignment"
+              >
+                <ToggleButton value="center">Popular</ToggleButton>
+                <ToggleButton value="center">In Theaters</ToggleButton>
+              </ToggleButtonGroup>
             </Box>
           </Box>
         </Box>

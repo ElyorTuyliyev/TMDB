@@ -1,4 +1,11 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { CinemaStyle } from "../cinema/Cinema.style";
@@ -37,6 +44,8 @@ const Popular = () => {
     getMovie();
   }, []);
 
+  const [alignment, setAlignment] = React.useState("left");
+
   return (
     <CinemaStyle>
       <Container maxWidth="lg">
@@ -45,9 +54,15 @@ const Popular = () => {
             What's Popular
           </Typography>
           <Box className="cinema__btn-wrapper">
-            <Button className="cinema__btn" variant="contained">
-              In Theaters
-            </Button>
+            <ToggleButtonGroup
+              className="cinema__btn"
+              exclusive
+              value={alignment}
+              aria-label="text-alignment"
+            >
+              <ToggleButton value="center">Popular</ToggleButton>
+              <ToggleButton value="center">In Theaters</ToggleButton>
+            </ToggleButtonGroup>
           </Box>
         </Box>
 

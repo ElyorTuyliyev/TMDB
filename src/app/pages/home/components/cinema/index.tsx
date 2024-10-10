@@ -1,4 +1,11 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { CinemaStyle } from "./Cinema.style";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -32,12 +39,14 @@ const Cinemas = () => {
             Trending
           </Typography>
           <Box className="cinema__btn-wrapper">
-            <Button className="cinema__btn" variant="outlined">
-              Today
-            </Button>
-            <Button className="cinema__btn" variant="outlined">
-              This week
-            </Button>
+            <ToggleButtonGroup
+              className="cinema__btn"
+              exclusive
+              aria-label="text-alignment"
+            >
+              <ToggleButton value="center">Popular</ToggleButton>
+              <ToggleButton value="center">In Theaters</ToggleButton>
+            </ToggleButtonGroup>
           </Box>
         </Box>
 
