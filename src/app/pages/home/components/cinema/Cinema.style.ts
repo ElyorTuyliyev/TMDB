@@ -4,6 +4,7 @@ export const CinemaStyle = styled.div`
   .cinema__title-wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 24px;
     padding: 24px 0;
   }
@@ -16,12 +17,17 @@ export const CinemaStyle = styled.div`
     scrollbar-width: thin;
   }
 
+  .cinema__btn {
+    padding: 5px 10px;
+  }
+
   .cinema__img-wrapper {
     position: relative;
   }
 
   .cinema__img {
     width: 150px;
+    min-height: 230px;
     border-radius: 10px;
   }
   .cinema__img-icon {

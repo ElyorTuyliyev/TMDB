@@ -1,9 +1,17 @@
-import React from "react";
+import { colors } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
-const Colors = {
-  dark: {
-    900: "#000000",
-    800: "#2a2a2a",
-    700: "#5f5f5f",
+export const theme = createTheme({
+  components: {
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected, &.Mui-selected:hover": {
+            color: "white",
+            backgroundColor: colors.blue[500],
+          },
+        },
+      },
+    },
   },
-};
+});

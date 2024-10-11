@@ -17,7 +17,7 @@ const MovieTrailer = (props: Props) => {
       <TrailerStyle>
         <Box className="movie__trailer-wrapper">
           <Box className="movie__trailer-title-wrapper">
-            <Typography>Latest Trailer </Typography>
+            <Typography variant="h4">Latest Trailer </Typography>
             <Box>
               <ToggleButtonGroup
                 className="cinema__btn"
@@ -34,15 +34,15 @@ const MovieTrailer = (props: Props) => {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/moMbpOfFOIY?si=Gjctkd1SLPDq6zq-"
-            title="YouTube video player"
+            src="https://www.youtube.com/embed/rZveIhEMDa0"
+            title="Mr Bean hitchiking - Mr Bean&#39;s Holiday"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/moMbpOfFOIY?si=Gjctkd1SLPDq6zq-"
-            title="YouTube video player"
+            src="https://www.youtube.com/embed/hY6aF9B4hKY"
+            title="Prison Break | Mechanic Resurrection | Prime Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
         </Box>

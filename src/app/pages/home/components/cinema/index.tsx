@@ -6,7 +6,7 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import { CinemaStyle } from "./Cinema.style";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 type Props = {
@@ -14,13 +14,25 @@ type Props = {
   poster_path: string;
   vote_count: string;
   release_date: string;
+  trending: string;
 };
 
 const Cinemas = () => {
   const [movieList, setMovieList] = useState([]);
+  const [trending, setTrending] = useState("day");
+
+  const handleTrendingDayChange = (
+    _: MouseEvent<HTMLElement>,
+    value: string
+  ) => {
+    if (value !== null) {
+      setTrending(value);
+    }
+  };
+
   const getMovie = () => {
     fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?api_key=2101c54b76293d55849fe4ef85376cc5&page=2"
+      `https://api.themoviedb.org/3/trending/movie/${trending}?api_key=2101c54b76293d55849fe4ef85376cc5`
     )
       .then((response) => response.json())
       .then((response) => setMovieList(response.results))
@@ -29,29 +41,36 @@ const Cinemas = () => {
 
   useEffect(() => {
     getMovie();
-  }, []);
+  }, [trending]);
 
   return (
     <CinemaStyle>
       <Container maxWidth="lg">
         <Box className="cinema__title-wrapper">
           <Typography className="cinema__title" variant="h4">
-            Trending
+            Trending {trending}
           </Typography>
           <Box className="cinema__btn-wrapper">
             <ToggleButtonGroup
+              value={trending}
+              color="primary"
               className="cinema__btn"
               exclusive
               aria-label="text-alignment"
+              onChange={handleTrendingDayChange}
             >
-              <ToggleButton value="center">Popular</ToggleButton>
-              <ToggleButton value="center">In Theaters</ToggleButton>
+              <ToggleButton className="cinema__btn" value="day">
+                Today
+              </ToggleButton>
+              <ToggleButton className="cinema__btn" value="week">
+                This Week
+              </ToggleButton>
             </ToggleButtonGroup>
           </Box>
         </Box>
 
         <Box className="cinemas__wrapper">
-          {movieList.map(
+          {(movieList || [])?.map(
             ({ title, poster_path, vote_count, release_date }: Props) => {
               return (
                 <Box>

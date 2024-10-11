@@ -5,6 +5,8 @@ import { HeaderStyle } from "./header.style";
 import headerLogo from "./assets/tmdb__logo.png";
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
+import { PATHS } from "../../constants/path";
 
 type Props = {};
 
@@ -24,7 +26,13 @@ const Header = (props: Props) => {
             justifyContent="space-between"
           >
             <Box display="flex" alignItems="center" gap={3}>
-              <img className="header__logo" src={headerLogo} alt="tmdb-logo " />
+              <Link to={PATHS.HOME}>
+                <img
+                  className="header__logo"
+                  src={headerLogo}
+                  alt="tmdb-logo "
+                />
+              </Link>
               <Typography className="header__links">Movie</Typography>
               <Typography className="header__links">TV shows</Typography>
               <Typography className="header__links">People</Typography>
