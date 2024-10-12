@@ -16,6 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "files": [".mp4"],
   "include": ["src"]
 }

@@ -17,7 +17,6 @@ import { PATHS } from "../../constants/path";
 type Props = {};
 
 const Header = (props: Props) => {
-  // State for Movie menu
   const [movieAnchorEl, setMovieAnchorEl] = React.useState<null | HTMLElement>(
     null
   );
@@ -101,7 +100,9 @@ const Header = (props: Props) => {
                   "aria-labelledby": "movie-button",
                 }}
               >
-                <MenuItem onClick={handleMovieClose}>Popular</MenuItem>
+                <MenuItem onClick={handleMovieClose}>
+                  <Link to={PATHS.POPULAR}>Popular</Link>
+                </MenuItem>
                 <MenuItem onClick={handleMovieClose}>Now Playing</MenuItem>
                 <MenuItem onClick={handleMovieClose}>Upcoming</MenuItem>
                 <MenuItem onClick={handleMovieClose}>Top Rated</MenuItem>

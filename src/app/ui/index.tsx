@@ -8,8 +8,8 @@ type Props = {};
 const Ui = (props: Props) => {
   return (
     <Box>
-      <Home />
-      {/* <Popular /> */}
+      {/* <Home /> */}
+      <Popular />
     </Box>
   );
 };

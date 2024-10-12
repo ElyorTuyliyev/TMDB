@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const CardStyle = styled.div`
   .cinema__img-wrapper {
     position: relative;
+    width: fit-content;
   }
 
   .cinema__img-icon {
