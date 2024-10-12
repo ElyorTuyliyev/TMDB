@@ -12,12 +12,6 @@ import { CinemaStyle } from "../cinema/Cinema.style";
 import { log } from "console";
 import Card from "../../../../components/Card/card";
 
-type Props = {
-  title: string;
-  poster_path: string;
-  vote_count: string;
-  release_date: string;
-};
 const Popular = () => {
   const [movieList, setMovieList] = useState([]);
   const getMovie = () => {
