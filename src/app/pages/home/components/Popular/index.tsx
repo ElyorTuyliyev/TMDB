@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { CinemaStyle } from "../cinema/Cinema.style";
 import { log } from "console";
+import Card from "../../../../components/Card/card";
 
 type Props = {
   title: string;
@@ -61,35 +62,16 @@ const Popular = () => {
         </Box>
 
         <Box className="cinemas__wrapper">
-          {movieList.map(
-            ({ title, poster_path, vote_count, release_date }: Props) => {
-              return (
-                <Box>
-                  <Box className="cinema__img-wrapper">
-                    <Box className="cinema__img-icon">
-                      <MoreHorizIcon />
-                    </Box>
-                    <img
-                      className="cinema__img"
-                      src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                      alt="cinema-img"
-                    />
-                  </Box>
-                  <Box className="cinema__text-wrapper">
-                    <Box className="cinema__percentage-wrapper">
-                      <Typography className="cinema__percentage">
-                        {vote_count}
-                      </Typography>
-                    </Box>
-                    <Typography className="cinema__title">{title}</Typography>
-                    <Typography className="cinema__date">
-                      {release_date}
-                    </Typography>
-                  </Box>
-                </Box>
-              );
-            }
-          )}
+          {movieList.map(({ title, poster_path, vote_count, release_date }) => {
+            return (
+              <Card
+                title={title}
+                poster_path={poster_path}
+                vote_count={vote_count}
+                release_date={release_date}
+              />
+            );
+          })}
         </Box>
       </Container>
     </CinemaStyle>
