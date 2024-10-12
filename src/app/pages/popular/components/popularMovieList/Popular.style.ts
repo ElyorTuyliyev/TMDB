@@ -8,9 +8,9 @@ export const PopularMovieListStyle = styled.div`
 
   .popular__sort-wrapper {
     max-width: 254px;
+    height: fit-content;
     width: 100%;
-    height: 100vh;
-    background-color: red;
+    box-shadow: 0 0 5px #000;
   }
 
   .popular__movie-list-wrapper {

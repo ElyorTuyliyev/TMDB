@@ -2,6 +2,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { PopularMovieListStyle } from "./Popular.style";
 import Card from "../../../../components/Card/card";
+import SortList from "../../../../components/Sort-list/SortList";
 
 const PopularMovieList = () => {
   const [movieList, setMovieList] = useState([]);
@@ -31,7 +32,9 @@ const PopularMovieList = () => {
           Popular Movies
         </Typography>
         <Box className="popular__wrapper">
-          <Box className="popular__sort-wrapper"></Box>
+          <Box className="popular__sort-wrapper">
+            <SortList />
+          </Box>
           <Box width="100%">
             <Box className="popular__movie-list-wrapper">
               {movieList.map(
