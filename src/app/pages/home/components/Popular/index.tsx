@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { CinemaStyle } from "../cinema/Cinema.style";
 import { log } from "console";
+import Card from "../../../../components/Card/card";
 
 type Props = {
   title: string;
@@ -30,9 +31,7 @@ const Popular = () => {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${Math.floor(
-        Math.random() * 9
-      )}`,
+      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,
       options
     )
       .then((response) => response.json())
@@ -42,9 +41,7 @@ const Popular = () => {
 
   useEffect(() => {
     getMovie();
-  }, []);
-
-  const [alignment, setAlignment] = React.useState("left");
+  }, [movieList]);
 
   return (
     <CinemaStyle>
@@ -57,45 +54,24 @@ const Popular = () => {
             <ToggleButtonGroup
               className="cinema__btn"
               exclusive
-              value={alignment}
               aria-label="text-alignment"
             >
-              <ToggleButton value="center">Popular</ToggleButton>
               <ToggleButton value="center">In Theaters</ToggleButton>
             </ToggleButtonGroup>
           </Box>
         </Box>
 
         <Box className="cinemas__wrapper">
-          {movieList.map(
-            ({ title, poster_path, vote_count, release_date }: Props) => {
-              return (
-                <Box>
-                  <Box className="cinema__img-wrapper">
-                    <Box className="cinema__img-icon">
-                      <MoreHorizIcon />
-                    </Box>
-                    <img
-                      className="cinema__img"
-                      src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                      alt="cinema-img"
-                    />
-                  </Box>
-                  <Box className="cinema__text-wrapper">
-                    <Box className="cinema__percentage-wrapper">
-                      <Typography className="cinema__percentage">
-                        {vote_count}
-                      </Typography>
-                    </Box>
-                    <Typography className="cinema__title">{title}</Typography>
-                    <Typography className="cinema__date">
-                      {release_date}
-                    </Typography>
-                  </Box>
-                </Box>
-              );
-            }
-          )}
+          {movieList.map(({ title, poster_path, vote_count, release_date }) => {
+            return (
+              <Card
+                title={title}
+                poster_path={poster_path}
+                vote_count={vote_count}
+                release_date={release_date}
+              />
+            );
+          })}
         </Box>
       </Container>
     </CinemaStyle>

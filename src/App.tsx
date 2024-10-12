@@ -1,11 +1,10 @@
 import { Box } from "@mui/material";
-import React from "react";
-import Home from "./app/pages/home";
+import Ui from "./app/ui";
 
 function App() {
   return (
     <Box>
-      <Home />
+      <Ui />
     </Box>
   );
 }
