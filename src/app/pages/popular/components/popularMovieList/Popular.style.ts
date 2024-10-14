@@ -10,7 +10,6 @@ export const PopularMovieListStyle = styled.div`
     max-width: 254px;
     height: fit-content;
     width: 100%;
-    box-shadow: 0 0 5px #000;
   }
 
   .popular__movie-list-wrapper {
