@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import React from "react";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
-import PopularMovieList from "./components/popularMovieList/popularMovieList";
+import Header from "../../../components/header";
+import PopularMovieList from "./components/PopularMovieList";
+import Footer from "../../../components/footer";
 
 type Props = {};
 

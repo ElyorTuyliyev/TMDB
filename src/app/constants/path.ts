@@ -1,4 +1,5 @@
 export const PATHS = {
   HOME: "/",
-  POPULAR: "/popular",
+  POPULAR: "/movie/popular",
+  NowPlaying: "/movie/now",
 };

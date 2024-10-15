@@ -45,103 +45,127 @@ const SortList = (props: Props) => {
 
   return (
     <SortStyle>
-      <Box display="flex" gap={2} flexDirection="column">
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="sort__panel"
-            id="sort__panel"
-          >
-            Sort
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography
-              sx={{
-                fontSize: "14px",
-              }}
-              className="sort__panel-title"
+      <Box className="sort__wrapper">
+        <Box display="flex" gap={2} flexDirection="column">
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="sort__panel"
+              id="sort__panel"
             >
-              Sort Results By
-            </Typography>
-            <FormControl fullWidth>
-              <Select
-                className="sort__select"
-                value={sort}
-                onChange={handleChange}
+              Sort
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                }}
+                className="sort__panel-title"
               >
-                <MenuItem value={"PopularityDescending"}>
-                  Popularity Descending
-                </MenuItem>
-                <MenuItem value={"PopularityAscending"}>
-                  Popularity Ascending
-                </MenuItem>
-                <MenuItem value={"RatingDescending"}>
-                  Rating Descending
-                </MenuItem>
-                <MenuItem value={"ReleaseDateDescending"}>
-                  Release Date Descending
-                </MenuItem>
-                <MenuItem value={"Release Date Ascending"}>
-                  Release Date Ascending
-                </MenuItem>
-                <MenuItem value={"A-Z"}> Title (A-Z)</MenuItem>
-                <MenuItem value={"Z-A"}> Title (Z-A)</MenuItem>
-              </Select>
-            </FormControl>
-          </AccordionDetails>
-        </Accordion>
+                Sort Results By
+              </Typography>
+              <FormControl fullWidth>
+                <Select
+                  className="sort__select"
+                  value={sort}
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"PopularityDescending"}>
+                    Popularity Descending
+                  </MenuItem>
+                  <MenuItem value={"PopularityAscending"}>
+                    Popularity Ascending
+                  </MenuItem>
+                  <MenuItem value={"RatingDescending"}>
+                    Rating Descending
+                  </MenuItem>
+                  <MenuItem value={"ReleaseDateDescending"}>
+                    Release Date Descending
+                  </MenuItem>
+                  <MenuItem value={"Release Date Ascending"}>
+                    Release Date Ascending
+                  </MenuItem>
+                  <MenuItem value={"A-Z"}> Title (A-Z)</MenuItem>
+                  <MenuItem value={"Z-A"}> Title (Z-A)</MenuItem>
+                </Select>
+              </FormControl>
+            </AccordionDetails>
+          </Accordion>
 
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="sort__panel"
-            id="sort__panel"
-          >
-            Filters
-          </AccordionSummary>
-          <AccordionDetails>
-            <FormControl>
-              <FormLabel id="sort__show-me">Show Me</FormLabel>
-              <RadioGroup>
-                <FormControlLabel
-                  value={"Everything"}
-                  label="Everything"
-                  control={<Radio />}
-                ></FormControlLabel>
-                <FormControlLabel
-                  value="movieSeen"
-                  label="Movies I Haven't Seen"
-                  control={<Radio />}
-                ></FormControlLabel>
-                <FormControlLabel
-                  value="movieSeen1"
-                  label="Movies I Have Seen"
-                  control={<Radio />}
-                ></FormControlLabel>
-              </RadioGroup>
-              <Box display="flex" flexDirection="column" gap={2}>
-                <DatePicker label="From" />
-                <DatePicker label="To" />
-              </Box>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="sort__panel"
+              id="sort__panel"
+            >
+              Filters
+            </AccordionSummary>
+            <AccordionDetails>
+              <FormControl>
+                <FormLabel id="sort__show-me">Show Me</FormLabel>
+                <RadioGroup>
+                  <FormControlLabel
+                    value={"Everything"}
+                    label="Everything"
+                    control={<Radio />}
+                  ></FormControlLabel>
+                  <FormControlLabel
+                    value="movieSeen"
+                    label="Movies I Haven't Seen"
+                    control={<Radio />}
+                  ></FormControlLabel>
+                  <FormControlLabel
+                    value="movieSeen1"
+                    label="Movies I Have Seen"
+                    control={<Radio />}
+                  ></FormControlLabel>
+                </RadioGroup>
+                <Box display="flex" flexDirection="column" gap={2}>
+                  <DatePicker label="From" />
+                  <DatePicker label="To" />
+                </Box>
 
-              <Box>
-                <Typography>Genres</Typography>
-              </Box>
-              <Box display="flex" flexDirection="row" gap={1} flexWrap="wrap">
-                {MOVIE_GENRES.map((title) => (
-                  <Chip
-                    className="sort__genres-btn"
-                    variant="filled"
-                    label={title}
-                    onClick={() => handleBtn(title)}
-                  />
-                ))}
-              </Box>
-              <Typography sx={{}}>Certification</Typography>
-            </FormControl>
-          </AccordionDetails>
-        </Accordion>
-        <Button variant="contained">search</Button>
+                <Box>
+                  <Typography>Genres</Typography>
+                </Box>
+                <Box display="flex" flexDirection="row" gap={1} flexWrap="wrap">
+                  {MOVIE_GENRES.map((title) => (
+                    <Chip
+                      className="sort__genres-btn"
+                      variant="filled"
+                      label={title}
+                      onClick={() => handleBtn(title)}
+                    />
+                  ))}
+                </Box>
+                <Typography
+                  sx={{
+                    m: "10px",
+                    borderBottom: "1px solid grey",
+                    borderTop: "1px solid grey",
+                    padding: "8px 0 ",
+                  }}
+                >
+                  Certification
+                </Typography>
+                <Typography
+                  className="sort__language-title"
+                  variant="subtitle2"
+                >
+                  Language
+                </Typography>
+                <Select defaultValue={"Eng"}>
+                  <MenuItem value={"Eng"}>Eng</MenuItem>
+                  <MenuItem value={"Ru"}>Ru</MenuItem>
+                  <MenuItem value={"Uz"}>Uz</MenuItem>
+                  <MenuItem value={"Kz"}>Kz</MenuItem>
+                  <MenuItem value={"Kg"}>Kg</MenuItem>
+                </Select>
+              </FormControl>
+            </AccordionDetails>
+          </Accordion>
+          <Button variant="contained">search</Button>
+        </Box>
       </Box>
     </SortStyle>
   );

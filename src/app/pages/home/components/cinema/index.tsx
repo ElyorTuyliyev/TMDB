@@ -35,7 +35,7 @@ const Cinemas = () => {
 
   useEffect(() => {
     getMovie();
-  }, [trending]);
+  }, []);
 
   return (
     <CinemaStyle>

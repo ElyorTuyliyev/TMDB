@@ -1,6 +1,7 @@
 import { PATHS } from "../constants/path";
 import Home from "../pages/home";
-import Popular from "../pages/popular/popular";
+import NowPlaying from "../pages/Movie/Now";
+import Popular from "../pages/Movie/Popular";
 
 export const ROUTES = [
   {
@@ -10,5 +11,9 @@ export const ROUTES = [
   {
     element: <Popular />,
     path: PATHS.POPULAR,
+  },
+  {
+    element: <NowPlaying />,
+    path: PATHS.NowPlaying,
   },
 ];
