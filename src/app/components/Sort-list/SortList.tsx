@@ -39,7 +39,7 @@ const SortList = (props: Props) => {
     } else {
       setSelectedGenres((prev) => [...prev, title]);
     }
-    setSelectedGenres((prev) => [...prev, title]);
+
     console.log(selectedGenres);
   };
 
@@ -131,12 +131,13 @@ const SortList = (props: Props) => {
                 {MOVIE_GENRES.map((title) => (
                   <Chip
                     className="sort__genres-btn"
-                    variant="outlined"
+                    variant="filled"
                     label={title}
                     onClick={() => handleBtn(title)}
                   />
                 ))}
               </Box>
+              <Typography sx={{}}>Certification</Typography>
             </FormControl>
           </AccordionDetails>
         </Accordion>

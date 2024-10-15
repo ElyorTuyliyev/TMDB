@@ -9,7 +9,7 @@ const Ui = (props: Props) => {
   return (
     <Box>
       {/* <Home /> */}
-      <Popular />
+      {/* <Popular /> */}
     </Box>
   );
 };
