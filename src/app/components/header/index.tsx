@@ -103,7 +103,9 @@ const Header = (props: Props) => {
                 <MenuItem onClick={handleMovieClose}>
                   <Link to={PATHS.POPULAR}>Popular</Link>
                 </MenuItem>
-                <MenuItem onClick={handleMovieClose}>Now Playing</MenuItem>
+                <MenuItem onClick={handleMovieClose}>
+                  <Link to={PATHS.NowPlaying}>Now Playing</Link>
+                </MenuItem>
                 <MenuItem onClick={handleMovieClose}>Upcoming</MenuItem>
                 <MenuItem onClick={handleMovieClose}>Top Rated</MenuItem>
               </Menu>

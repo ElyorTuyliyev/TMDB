@@ -35,7 +35,7 @@ const Popular = () => {
 
   useEffect(() => {
     getMovie();
-  }, [movieList]);
+  }, []);
 
   return (
     <CinemaStyle>

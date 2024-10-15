@@ -24,7 +24,7 @@ const PopularMovieList = () => {
 
   useEffect(() => {
     getMovie();
-  }, [movieList]);
+  }, []);
   return (
     <PopularMovieListStyle>
       <Container>
@@ -32,9 +32,7 @@ const PopularMovieList = () => {
           Popular Movies
         </Typography>
         <Box className="popular__wrapper">
-          <Box className="popular__sort-wrapper">
-            <SortList />
-          </Box>
+          <SortList />
           <Box width="100%">
             <Box className="popular__movie-list-wrapper">
               {movieList.map(

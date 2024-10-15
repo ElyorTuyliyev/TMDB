@@ -6,12 +6,6 @@ export const PopularMovieListStyle = styled.div`
     gap: 16px;
   }
 
-  .popular__sort-wrapper {
-    max-width: 254px;
-    height: fit-content;
-    width: 100%;
-  }
-
   .popular__movie-list-wrapper {
     width: 100%;
     display: grid;
