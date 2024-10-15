@@ -1,8 +1,8 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { PopularMovieListStyle } from "./Popular.style";
-import Card from "../../../../components/Card/card";
-import SortList from "../../../../components/Sort-list/SortList";
+import SortList from "../../../../../components/Sort-list/SortList";
+import Card from "../../../../../components/Card/card";
 
 const PopularMovieList = () => {
   const [movieList, setMovieList] = useState([]);

@@ -137,7 +137,26 @@ const SortList = (props: Props) => {
                   />
                 ))}
               </Box>
-              <Typography sx={{}}>Certification</Typography>
+              <Typography
+                sx={{
+                  m: "10px",
+                  borderBottom: "1px solid grey",
+                  borderTop: "1px solid grey",
+                  padding: "8px 0 ",
+                }}
+              >
+                Certification
+              </Typography>
+              <Typography className="sort__language-title" variant="subtitle2">
+                Language
+              </Typography>
+              <Select defaultValue={"Eng"}>
+                <MenuItem value={"Eng"}>Eng</MenuItem>
+                <MenuItem value={"Ru"}>Ru</MenuItem>
+                <MenuItem value={"Uz"}>Uz</MenuItem>
+                <MenuItem value={"Kz"}>Kz</MenuItem>
+                <MenuItem value={"Kg"}>Kg</MenuItem>
+              </Select>
             </FormControl>
           </AccordionDetails>
         </Accordion>

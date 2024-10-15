@@ -1,6 +1,6 @@
 import { PATHS } from "../constants/path";
 import Home from "../pages/home";
-import Popular from "../pages/popular/popular";
+import Popular from "../pages/Movie/Popular";
 
 export const ROUTES = [
   {
