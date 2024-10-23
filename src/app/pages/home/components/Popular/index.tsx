@@ -1,15 +1,12 @@
 import {
   Box,
-  Button,
   Container,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { CinemaStyle } from "../cinema/Cinema.style";
-import { log } from "console";
 import Card from "../../../../components/Card/card";
 
 const Popular = () => {
